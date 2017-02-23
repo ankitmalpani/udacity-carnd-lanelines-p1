@@ -46,8 +46,8 @@ By this time I had the first result where the lanes were detected without extrap
 (To reproduce this, one could use `draw_lines_old` method instead of the new `draw_lines` method)
 
 *Approach to get a single line:*
-After trying out a few different combinations of ROI filters and hough transforms, I noticed how we had it would be
-very difficult to get the full lines with these parameters.
+After trying out a few different combinations of ROI filters and hough transforms, I noticed that it would be
+very difficult to get the full lines while trying to permute these parameters.
 I approached this issue by trying to get 4 endpoints for the right and the left lines.
 Since I was dealing with lines, I knew slope and Y-intercept would be important elements here.
 I also wanted to calculate the min, max of x,y co-ordinates from the line segments from the hough output. This would help in
