@@ -1,16 +1,14 @@
 # udacity-carnd-lanelines-p1
-submission of Udacity CarND's first project: LaneLines
+Submission of Udacity CarND's first project: LaneLines
 
 #**Finding Lane Lines on the Road**
-
----
-
 
 ### Reflection
 
 ###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 *My pipeline consisted of the following steps:*
+
 1. First converted the image to grayscale
 2. Took a copy of the image to work with
 3. Applied gaussian smoothing using kernel of size 5
@@ -31,12 +29,11 @@ Since I was dealing with lines, I knew slope and Y-intercept would be important 
 I also wanted to calculate the min, max of x,y co-ordinates from the line segments from the hough output. This would help in
 estimating the top 2 points for right and left lines.
 Here is the summary of steps I took: (Though these are linearly written, there was a fair amount of iteration on these steps)
+
 1. Wrapped scipy's `stats.lingress` function inside a helper function to get the slope and Y-intercept for a pair of points
-2. Created a helper method to identify if a point was close enough to the max value of x,y axis. For eg: the max-Y value for
-the image could be 540, but I wanted to consider points that lie on 538/539 pixels as well
+2. Created a helper method to identify if a point was close enough to the max value of x,y axis. For eg: the max-Y value for the image could be 540, but I wanted to consider points that lie on 538/539 pixels as well
 3. Realized that since Y is increasing as it goes down, slopes would be inverted
-4. Modified the `draw_lines` function by looping through all the line segments returned by hough transform and
-collecting positive and negative slopes for right and left lanes respectively in a list. (This would help to calculate an average slope for all line segments later on)
+4. Modified the `draw_lines` function by looping through all the line segments returned by hough transform and collecting positive and negative slopes for right and left lanes respectively in a list. (This would help to calculate an average slope for all line segments later on)
 5. Tracked min value of x-coordinate and y-coordinate for each left and right line (negative and positive slopes)
 6. Also tracked the x-coordinate-optima for values where y-coordinate was close to 540. This would give me a ready set of endpoints at least for one of the lines (in general the solid lane line - assuming hough transform outputs correctly)
 7. Once the looping was done, I calculated the average left, right slopes
@@ -46,8 +43,8 @@ collecting positive and negative slopes for right and left lanes respectively in
 
 ###2. Identify potential shortcomings with your current pipeline
 
-Potential shortcomings:
 I think, one potential shortcoming is that the pipeline is based on some assumptions:
+
 1. The camera is going to be always in the same position on the car. This made the calculations, parameter estimations a bit easier.
 2. The lane line are consistently clear on the road. What if there is a bald patch (even if partially)
 3. Did not work on the challenge video
