@@ -12,7 +12,7 @@ Submission of Udacity CarND's first project: LaneLines
 [image1]: ./sample_images/gray.png "gray"
 [image2]: ./sample_images/smoothed_gray.png "smoothed_gray"
 [image3]: ./sample_images/canny_edge.png "canny_edge"
-[image4]: ./sample_images/roi_hough_old.png "roi_hough_old"
+[image5]: ./sample_images/roi_hough.png "roi_hough"
 
 *My pipeline consisted of the following steps:*
 
@@ -33,7 +33,7 @@ Submission of Udacity CarND's first project: LaneLines
 6. Applied region_of_interest filter using the vertices defined in step 4.
 7. Applied the hough_transform to this filtered image
 
-![alt text][image4]
+![alt text][image5]
 
 8. Performed the weighted add to get the final results
 
