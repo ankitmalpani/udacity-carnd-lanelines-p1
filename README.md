@@ -7,15 +7,34 @@ Submission of Udacity CarND's first project: LaneLines
 
 ###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
+[//]: # (Image References)
+
+[image1]: ./sample_images/gray.png "gray"
+[image2]: ./sample_images/smoothed_gray.png "smoothed_gray"
+[image3]: ./sample_images/canny_edge.png "canny_edge"
+[image4]: ./sample_images/roi_hough_old.png "roi_hough_old"
+
 *My pipeline consisted of the following steps:*
 
 1. First converted the image to grayscale
+
+![alt text][image1]
+
 2. Took a copy of the image to work with
 3. Applied gaussian smoothing using kernel of size 5
+
+![alt text][image2]
+
 4. Applied canny_edge transform to identify edges
+
+![alt text][image3]
+
 5. Defined vertices that would help define the ROI
 6. Applied region_of_interest filter using the vertices defined in step 4.
 7. Applied the hough_transform to this filtered image
+
+![alt text][image4]
+
 8. Performed the weighted add to get the final results
 
 By this time I had the first result where the lanes were detected without extrapolation.
