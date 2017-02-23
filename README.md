@@ -84,3 +84,6 @@ A possible improvement would be to improve accuracy. I would like to look deeper
 points given my current state of hough outputs. I would also like to see if there are better parameters for my canny_edge, ROI and hough functions.
 
 Another potential improvement could be robustness. Building a pipeline that works despite of some assumptions and adapts with different road conditions
+
+###4. Further reading
+http://stackoverflow.com/questions/36598897/python-and-opencv-improving-my-lane-detection-algorithm
