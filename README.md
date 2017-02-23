@@ -12,7 +12,10 @@ Submission of Udacity CarND's first project: LaneLines
 [image1]: ./sample_images/gray.png "gray"
 [image2]: ./sample_images/smoothed_gray.png "smoothed_gray"
 [image3]: ./sample_images/canny_edge.png "canny_edge"
+[image4]: ./sample_images/final_old.png "final_old"
 [image5]: ./sample_images/roi_hough.png "roi_hough"
+[image6]: ./sample_images/roi_hough_new.png "roi_hough_new"
+[image7]: ./sample_images/final_new.png "final_new"
 
 *My pipeline consisted of the following steps:*
 
@@ -37,6 +40,8 @@ Submission of Udacity CarND's first project: LaneLines
 
 8. Performed the weighted add to get the final results
 
+![alt text][image4]
+
 By this time I had the first result where the lanes were detected without extrapolation.
 (To reproduce this, one could use `draw_lines_old` method instead of the new `draw_lines` method)
 
@@ -58,6 +63,10 @@ Here is the summary of steps I took: (Though these are linearly written, there w
 7. Once the looping was done, I calculated the average left, right slopes
 8. Then, I estimated the 4 end points required to draw the line (4 vertices of a polygon). The upper points were easier to estimate based on the min/max values computed when looping. The lower endpoints required computation based on what information was already available to me in my variables mentioned in (6). The calculation used this formula: (y1 - y2) = m(x1 - x2) to estimate the missing point at y-optima(pixel 540)
 9. Once I had the 4 points, I used `cv2.line` function to draw lines on the input image
+
+![alt text][image6]
+
+![alt text][image7]
 
 
 ###2. Identify potential shortcomings with your current pipeline
