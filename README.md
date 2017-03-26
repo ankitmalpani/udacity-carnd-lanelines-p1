@@ -5,7 +5,7 @@ Submission of Udacity CarND's first project: LaneLines
 
 ### Reflection
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 [//]: # (Image References)
 
@@ -17,7 +17,7 @@ Submission of Udacity CarND's first project: LaneLines
 [image6]: ./sample_images/roi_hough_new.png "roi_hough_new"
 [image7]: ./sample_images/final_new.png "final_new"
 
-*My pipeline consisted of the following steps:*
+### My pipeline consisted of the following steps:
 
 1. First converted the image to grayscale
 
@@ -45,7 +45,7 @@ Submission of Udacity CarND's first project: LaneLines
 By this time I had the first result where the lanes were detected without extrapolation.
 (To reproduce this, one could use `draw_lines_old` method instead of the new `draw_lines` method)
 
-*Approach to get a single line:*
+### Approach to get a single line:
 After trying out a few different combinations of ROI filters and hough transforms, I noticed that it would be
 very difficult to get the full lines while trying to permute these parameters.
 I approached this issue by trying to get 4 endpoints for the right and the left lines.
@@ -69,7 +69,7 @@ Here is the summary of steps I took: (Though these are linearly written, there w
 ![alt text][image7]
 
 
-###2. Identify potential shortcomings with your current pipeline
+### 2. Identify potential shortcomings with your current pipeline
 
 I think, one potential shortcoming is that the pipeline is based on some assumptions:
 
@@ -78,7 +78,7 @@ I think, one potential shortcoming is that the pipeline is based on some assumpt
 3. Did not work on the challenge video
 
 
-###3. Suggest possible improvements to your pipeline
+### 3. Suggest possible improvements to your pipeline
 
 A possible improvement would be to improve accuracy. I would like to look deeper into more accurate methods of extrapolating
 points given my current state of hough outputs. I would also like to see if there are better parameters for my canny_edge, ROI and hough functions.
